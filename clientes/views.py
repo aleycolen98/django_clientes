@@ -28,7 +28,6 @@ def mostrar_form(request):
         if form.is_valid():
             print("valido")
             cliente = Cliente()
-
             cliente.nombres = form.cleaned_data['nombres']
             cliente.apellido_paterno = form.cleaned_data['apellido_paterno']
             cliente.apellido_materno = form.cleaned_data['apellido_materno']
