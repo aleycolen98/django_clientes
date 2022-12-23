@@ -77,7 +77,7 @@ WSGI_APPLICATION = 't24_test.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 't24',
+        'NAME': 't25',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',
