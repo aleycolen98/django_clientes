@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
 from .models import Cliente
+from .models import CuentaCliente
 from .forms import ClienteForm
 from .forms import ClienteForma
+from .forms import CuentaForma
 # Create your views here.
 
 def print_in_screen(request):
@@ -39,6 +41,24 @@ def mostrar_form(request):
         else:
             print("invalido")
     return render(request, 'agregar_cliente.html', {'form' : form})
+
+def mostrar_form_cuenta(request):
+
+    form2 = CuentaForma()
+    if request.method == "POST":
+        print(request.POST)
+        form2 = CuentaForma(request.POST)
+        if form2.is_valid():
+            print("valido")
+            cuenta = CuentaCliente()
+            cuenta.id_client_id = form2.cleaned_data['cliente']
+            cuenta.numero_cuenta = form2.cleaned_data['num_cuenta']
+            cuenta.tipo_de_cuenta = form2.cleaned_data['Tipo_cuenta']
+            cuenta.save()
+        else:
+            print("invalido")
+
+    return render(request, 'cuentas_form.html', {'form2':form2})
 
 
 

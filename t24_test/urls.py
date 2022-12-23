@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('addclientes',views.mostrar_form),
     path('aviso',views.print_message),
-    path('clientes',views.view_clients)
+    path('clientes',views.view_clients),
+    path('cuentas',views.mostrar_form_cuenta)
 ]
