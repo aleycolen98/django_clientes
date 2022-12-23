@@ -19,7 +19,7 @@ from clientes import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('addclientes',views.print_in_screen),
+    path('addclientes',views.mostrar_form),
     path('aviso',views.print_message),
     path('clientes',views.view_clients)
 ]
