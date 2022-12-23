@@ -18,7 +18,7 @@ class ClienteForma(forms.Form):
 
 class CuentaForma(forms.Form):
     
-    cliente = forms.ModelChoiceField(label="Cliente", queryset=Cliente.values_list('id', flat=True))
+    cliente = forms.ModelChoiceField(label="Cliente", queryset=Cliente.objects.all())
     num_cuenta = forms.IntegerField(label="Numero de cuenta")
     Tipo_cuenta = forms.CharField(label="Tipo de cuenta")
 
